@@ -21,12 +21,16 @@ export class AppComponent {
 
   email: string;
   password: string;
-  
+    
   user:User;
   // id:number;
   // name:string;
   // author:string;
   // price:number
+
+  texts: any[];
+  data: any[];
+  textFlag: boolean;
 
   constructor(){
     this.dateText = 'Hover on blue button to see the date.';
@@ -44,6 +48,11 @@ export class AppComponent {
     this.hideTable = true;
     
     this.user = new User();
+
+    this.texts = [];
+    this.data = [];
+    this.textFlag = false;
+
   }
 
   buttonClick(){
@@ -99,5 +108,13 @@ export class AppComponent {
     // this.name = undefined;
     // this.author = undefined;
     // this.price = undefined;
+  }
+
+  addText() {
+    this.texts.push("");
+  }
+
+  showText() {
+    this.textFlag = true;
   }
 }
