@@ -1,0 +1,29 @@
+
+Angular CLI install issues
+
+https://stackoverflow.com/questions/44525746/global-angular-cli-version-greater-than-local-version/44526528
+https://stackoverflow.com/questions/48128847/how-to-install-angular-cli-locally-without-the-g-flag
+
+git clone https://github.com/cosmicdev2016/angular5-starter.git
+
+Short Circuiting forEach:
+-----------------------------
+https://stackoverflow.com/questions/6260756/how-to-stop-javascript-foreach
+https://stackoverflow.com/questions/2641347/how-to-short-circuit-array-foreach-like-calling-break
+
+
+Error:
+-----------
+
+1>
+Run: ng serve --o
+
+Cannot read property 'config' of null
+TypeError: Cannot read property 'config' of null
+    at Class.run (E:\personal\Training\angular5-starter\node_modules\@angular\cli\tasks\serve.js:51:63)
+    at check_port_1.checkPort.then.port (E:\personal\Training\angular5-starter\node_modules\@angular\cli\commands\serve.js:123:26)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+
+https://stackoverflow.com/questions/42835118/angular-2-cannot-read-property-config-of-null
+
+2>

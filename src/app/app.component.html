@@ -146,4 +146,25 @@
   </ul>
 </div>
 
+<br>
+<br>
+
+<div class="container">
+  <div class="form-row">
+    <div class="col-md-6">
+      <label for="category">Category</label>
+      <select id="category" class="form-control" (change)="onCatChange()" [(ngModel)]="catgSelected">
+        <option *ngFor="let catg of categories">{{catg.cat_name}}</option>
+      </select>
+    </div>
+    <div class="col-md-6" *ngIf="showSubCatg">
+      <label for="subcategory">Sub-Category</label>
+      <select id="subcategory" class="form-control">
+        <option *ngFor="let subCatg of categories[selectedCatgIndex].sub_catg">{{subCatg}}</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
 <router-outlet></router-outlet>
