@@ -1,0 +1,24 @@
+<div class="container">
+  <button type="button" class="btn" (click)="showTable()" *ngIf="hideTable">Show Table</button>
+  <button type="button" class="btn" (click)="showTable()" *ngIf="!hideTable">Hide Table</button>
+
+  <table class="table" *ngIf="!hideTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let auth of authors">
+        <td>{{auth.id}}</td>
+        <td>{{auth.name}}</td>
+        <td>{{auth.auth}}</td>
+        <td>{{auth.price}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
