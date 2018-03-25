@@ -13,6 +13,7 @@ import { TablesComponent } from './tables/tables.component';
 
 import { HttpModule } from '@angular/http';
 import { TodosComponent } from './todos/todos.component';
+import { FormsComponent } from './forms/forms.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'intro', component: IntroComponent },
   { path: 'tables', component: TablesComponent },
-  { path: 'todos', component: TodosComponent }
+  { path: 'todos', component: TodosComponent },
+  { path: 'forms', component: FormsComponent }
 ];
 
 @NgModule({
@@ -33,6 +35,7 @@ const routes: Routes = [
     IntroComponent,
     TablesComponent,
     TodosComponent,
+    FormsComponent,
     
   ],
   imports: [
