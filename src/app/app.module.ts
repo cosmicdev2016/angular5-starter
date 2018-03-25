@@ -11,12 +11,16 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { IntroComponent } from './intro/intro.component';
 import { TablesComponent } from './tables/tables.component';
 
+import { HttpModule } from '@angular/http';
+import { TodosComponent } from './todos/todos.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'intro', component: IntroComponent },
-  { path: 'tables', component: TablesComponent }
+  { path: 'tables', component: TablesComponent },
+  { path: 'todos', component: TodosComponent }
 ];
 
 @NgModule({
@@ -27,12 +31,15 @@ const routes: Routes = [
     RegisterComponent,
     NavbarComponent,
     IntroComponent,
-    TablesComponent
+    TablesComponent,
+    TodosComponent,
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
