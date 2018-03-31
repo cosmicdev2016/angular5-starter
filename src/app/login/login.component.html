@@ -1,14 +1,14 @@
 <div class="container">
   <br>
-  <form #userForm="ngForm" (ngSubmit)="getLogin()" novalidate>
+  <form #userForm="ngForm" (ngSubmit)="getLogin(userForm)" novalidate>
     <fieldset>
       <h2 class="jumbotron text-center">Enter details to register with us</h2>
 
       <div class="form-group row">
         <label for="username" class="col-sm-2 col-form-label">Username</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" [(ngModel)]="user.username" required
-            #username="ngModel" [ngModelOptions]="{updateOn: 'change'}" (input) = "validateUser(username)">
+          <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" [(ngModel)]="user.username"
+            required #username="ngModel" [ngModelOptions]="{updateOn: 'change'}">
           <div [hidden]="username.pristine || username.valid" class="alert alert-danger">
             Username shouldn't be empty
           </div>
@@ -30,7 +30,7 @@
       </div>
 
       <p class='text-center'>
-        <button type="submit" [disabled]="userForm.form.invalid || isUserTaken" class="btn btn-success col-sm-2">
+        <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-success col-sm-2">
           Login</button>
         <button type="reset" class="btn btn-danger col-sm-2">Reset</button>
       </p>
@@ -40,10 +40,6 @@
 </div>
 
 <div class="container">
-  <div *ngIf="loginStatus == 1" class="alert alert-success">
-    <p class="text-center">Congrats ! Login Successfull.</p>
-  </div>
-
   <div *ngIf="loginStatus == 0" class="alert alert-danger">
     <p class="text-center">Sorry ! Login credentials invalid.</p>
   </div>

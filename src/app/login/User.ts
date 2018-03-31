@@ -1,6 +1,4 @@
 export class User {
-    id:number;
-    name:string;
-    author:string;
-    price:number
+    username: string;
+    password: string;
 }

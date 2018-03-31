@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from './User';
 import { PostsService } from '../posts.service';
 import { Router } from '@angular/router';
+import { User } from './User';
 
 @Component({
   selector: 'app-login',
@@ -13,60 +13,40 @@ export class LoginComponent implements OnInit {
   user: User;
   loginStatus: number;
 
-  userList: any[];
-  isUserTaken: boolean;
-  loginSuccess: boolean;
-
-  constructor(public postService: PostsService, public r: Router) { 
+  constructor(public postService: PostsService, public r: Router) {
+    console.log("inside login constructor");
     this.user = new User();
     this.loginStatus = -1;
-
-    this.userList = [
-      {
-        "name": "Leanne Graham",
-        "username": "Bret",
-        "email": "Sincere@april.biz"
-      },
-      {
-        "name": "Ervin Howell",
-        "username": "Antonette",
-        "email": "Shanna@melissa.tv",
-      },
-      {
-        "name": "Clementine Bauch",
-        "username": "Samantha",
-        "email": "Nathan@yesenia.net",
-      },
-      {
-        "name": "Patricia Lebsack",
-        "username": "Karianne",
-        "email": "Julianne.OConner@kory.org",
-      },
-      {
-        "name": "Chelsey Dietrich",
-        "username": "Kamren",
-        "email": "Lucio_Hettinger@annie.ca",
-      }
-    ];
-
-    this.isUserTaken = false;
-    this.loginSuccess = false;
   }
 
-  ngOnInit(){
-    
+  ngOnInit() {
+
   }
 
-  signUp(userForm) {
-    
-  }
+  getLogin(userForm) {
+    console.log(this.user);
+    this.postService.getLogin()
+      .subscribe(res => {
+        var userDetails = res;
+        console.log(userDetails);
+        console.log(userForm.form.value.username);
 
-  validateUser(username) {
-    
-  }
+        for (var i = 0; i < userDetails.length; i++) {
+          if (userDetails[i].username === userForm.form.value.username
+            && userDetails[i].passwd === userForm.form.value.password) {
 
-  getLogin() {
-    this.postService.getLogin();
-    this.r.navigateByUrl("/");
+            this.loginStatus = 1;
+            break;
+          } else {
+            this.loginStatus = 0;
+          }
+        }
+
+        if (this.loginStatus == 1) {
+          this.postService.setLoginStatus(true)
+          console.log("service: login success...");
+          this.r.navigateByUrl("/");
+        }
+      });
   }
 }

@@ -18,8 +18,12 @@ export class PostsService {
   }
 
   getLogin() {
-    this.loginSuccess = true;
-    console.log("service: login success...");
+    return this.http.get('http://localhost:8090/')
+      .map(res => res.json());
+  }
+
+  setLoginStatus(loginSuccess) {
+    this.loginSuccess = loginSuccess;
   }
 
   logout() {
