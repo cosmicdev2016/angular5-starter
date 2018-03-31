@@ -8,8 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/" routerLinkActive="active" 
-        [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/intro" routerLinkActive="active">Intro</a>
@@ -21,13 +20,19 @@
         <a class="nav-link" routerLink="/forms" routerLinkActive="active">Form Validation</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!postService.loginSuccess">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="postService.loginSuccess">
         <a class="nav-link" routerLink="/todos" routerLinkActive="active">TODOs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/services" routerLinkActive="active" *ngIf="postService.loginSuccess">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/logout" routerLinkActive="active" (click)="logout()" *ngIf="postService.loginSuccess">Logout</a>
       </li>
     </ul>
   </div>

@@ -1,3 +1,4 @@
+import { PostsService } from './posts.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +15,7 @@ import { TablesComponent } from './tables/tables.component';
 import { HttpModule } from '@angular/http';
 import { TodosComponent } from './todos/todos.component';
 import { FormsComponent } from './forms/forms.component';
+import { ServiceIntroComponent } from './service-intro/service-intro.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -22,7 +24,8 @@ const routes: Routes = [
   { path: 'intro', component: IntroComponent },
   { path: 'tables', component: TablesComponent },
   { path: 'todos', component: TodosComponent },
-  { path: 'forms', component: FormsComponent }
+  { path: 'forms', component: FormsComponent },
+  { path: 'services', component: ServiceIntroComponent }
 ];
 
 @NgModule({
@@ -36,7 +39,8 @@ const routes: Routes = [
     TablesComponent,
     TodosComponent,
     FormsComponent,
-    
+    ServiceIntroComponent
+
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpModule
   ],
-  providers: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

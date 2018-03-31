@@ -1,0 +1,20 @@
+<div class="container card-header">
+  <h4 class="card-title" style="text-align:center">Services</h4>
+</div>
+<br>
+<div class="container">
+  <div class="card border-secondary mb-3" *ngFor="let todo of todos; let i = index">
+    <div class="card-header">#{{i+1}}</div>
+    <div class="card-body">
+      <h4 class="card-title">{{todo.title}}</h4>
+      <p class="card-text">{{todo.userId}}</p>
+    </div>
+    <div class="card-footer text-muted">
+      Status
+      <!-- <i class="fa fa-check text-success" *ngIf="todo.completed"></i>
+          <i class="fa fa-close text-danger" *ngIf="!todo.completed"></i> -->
+      <i [ngClass]="todo.completed ? 'fa fa-check' : 'fa fa-close'" [style.color]="todo.completed ? 'green' : 'red'"></i>
+    </div>
+  </div>
+
+</div>
