@@ -23,6 +23,9 @@
         <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
       </li>
       <li class="nav-item" *ngIf="!postService.loginSuccess">
+        <a class="nav-link" routerLink="/parent" routerLinkActive="active">Parent-Child</a>
+      </li>
+      <li class="nav-item" *ngIf="!postService.loginSuccess">
         <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
       </li>
       <li class="nav-item" *ngIf="postService.loginSuccess">

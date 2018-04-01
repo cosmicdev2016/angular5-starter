@@ -1,0 +1,40 @@
+<br>
+<div class="container border border-primary">
+  <form #myForm="ngForm">
+    <fieldset>
+      <h1>2-Way Binding</h1>
+      <br>
+
+      <div class="form-group">
+        <input type="text" name="userName" class="form-control" placeholder="Enter name" [(ngModel)]="userName" required #username="ngModel"
+          [ngModelOptions]="{updateOn: 'change'}">
+        <div [hidden]="username.valid || username.pristine" class="alert alert-danger">Name is required</div>
+      </div>
+
+      <button type="reset" class="btn btn-danger" (click)="onReset()">Reset</button>
+    </fieldset>
+  </form>
+
+  <br>
+
+  <div class="container" *ngIf="userlist.length > 0">
+    <h3>from child emit</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userlist">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+<app-child [userName]="userName" (emitFromChild)="onChildChange($event)" (emitFromChild2)="onChildObjChange($event)"></app-child>

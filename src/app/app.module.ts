@@ -16,6 +16,8 @@ import { HttpModule } from '@angular/http';
 import { TodosComponent } from './todos/todos.component';
 import { FormsComponent } from './forms/forms.component';
 import { ServiceIntroComponent } from './service-intro/service-intro.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -25,7 +27,8 @@ const routes: Routes = [
   { path: 'tables', component: TablesComponent },
   { path: 'todos', component: TodosComponent },
   { path: 'forms', component: FormsComponent },
-  { path: 'services', component: ServiceIntroComponent }
+  { path: 'services', component: ServiceIntroComponent },
+  { path: 'parent', component: ParentComponent }
 ];
 
 @NgModule({
@@ -39,7 +42,9 @@ const routes: Routes = [
     TablesComponent,
     TodosComponent,
     FormsComponent,
-    ServiceIntroComponent
+    ServiceIntroComponent,
+    ParentComponent,
+    ChildComponent
 
   ],
   imports: [
