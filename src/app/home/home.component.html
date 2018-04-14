@@ -158,7 +158,7 @@
     <div class="col-md-6">
       <label for="category">Category</label>
       <select id="category" class="form-control" (change)="onCatChange()" [(ngModel)]="catgSelected">
-        <option *ngFor="let catg of categories">{{catg.cat_name}}</option>
+        <option *ngFor="let catg of categories; let i = index" value="{{i}}">{{catg.cat_name}}</option>
       </select>
     </div>
     <div class="col-md-6" *ngIf="showSubCatg">

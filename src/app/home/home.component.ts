@@ -8,19 +8,19 @@ import { User } from './User';
 })
 export class HomeComponent implements OnInit {
 
-  dateText:string;
-  buttonFlag:boolean;
-  hobbiesFlag:boolean;
+  dateText: string;
+  buttonFlag: boolean;
+  hobbiesFlag: boolean;
   hobbies: string[];
-  hobbyButtonText:string;
+  hobbyButtonText: string;
   defaultHobbies: string[];
   authors: any;
   hideTable: boolean;
 
   email: string;
   password: string;
-    
-  user:User;
+
+  user: User;
   // id:number;
   // name:string;
   // author:string;
@@ -38,18 +38,18 @@ export class HomeComponent implements OnInit {
   constructor() {
     this.dateText = 'Hover on blue button to see the date.';
     this.buttonFlag = false;
-    this.hobbies = ['Reading','Music','Coding'];
-    this.defaultHobbies = ['Reading','Music','Coding'];
+    this.hobbies = ['Reading', 'Music', 'Coding'];
+    this.defaultHobbies = ['Reading', 'Music', 'Coding'];
     this.hobbiesFlag = true;
     this.hobbyButtonText = 'hide hobbies';
     this.authors = [
-      {id: 1, name: "gaurav", auth:"new 1", price: 14},
-      {id: 1, name: "rohit", auth:"new 2", price: 12},
-      {id: 1, name: "pj", auth:"new 3", price: 13},
-      {id: 1, name: "baba", auth:"new 4", price: 15}
+      { id: 1, name: "gaurav", auth: "new 1", price: 14 },
+      { id: 1, name: "rohit", auth: "new 2", price: 12 },
+      { id: 1, name: "pj", auth: "new 3", price: 13 },
+      { id: 1, name: "baba", auth: "new 4", price: 15 }
     ];
     this.hideTable = true;
-    
+
     this.user = new User();
 
     this.texts = [];
@@ -73,49 +73,49 @@ export class HomeComponent implements OnInit {
     this.catgSelected = "";
     this.selectedCatgIndex = -1;
     this.showSubCatg = false;
-   }
+  }
 
-  ngOnInit(){
+  ngOnInit() {
     console.log('home init');
   }
 
-  buttonClick(){
+  buttonClick() {
     this.buttonFlag = true;
   }
 
-  closeClick(){
+  closeClick() {
     this.buttonFlag = false;
   }
 
-  mouseOver(){
+  mouseOver() {
     this.dateText = new Date().toString();
   }
 
-  mouseOut(){
+  mouseOut() {
     this.dateText = 'Hover on blue button to see the date';
   }
 
-  addHobby(){
+  addHobby() {
     this.hobbies.push('New Hobby');
     // this.hobbies.unshift('New Item');
   }
-  
-  resetHobby(){
-    this.hobbies = ['Reading','Music','Coding'];
-  }
-  
-  deleteHobby(i){
-    this.hobbies.splice(i,1);
+
+  resetHobby() {
+    this.hobbies = ['Reading', 'Music', 'Coding'];
   }
 
-  hobbyClick(){
-    if(!this.hobbiesFlag){
+  deleteHobby(i) {
+    this.hobbies.splice(i, 1);
+  }
+
+  hobbyClick() {
+    if (!this.hobbiesFlag) {
       this.hobbiesFlag = true;
       this.hobbyButtonText = 'hide hobbies';
     }
-    else{
+    else {
       this.hobbiesFlag = false;
-      this.hobbyButtonText = 'show hobbies';  
+      this.hobbyButtonText = 'show hobbies';
     }
   }
 
@@ -124,7 +124,7 @@ export class HomeComponent implements OnInit {
   }
 
   saveAuthors() {
-    
+
     this.authors.push(this.user);
 
     // this.authors.push({id: this.id, name: this.name, auth:this.author, price: this.price});
@@ -145,7 +145,7 @@ export class HomeComponent implements OnInit {
   onCatChange() {
     console.log(this.catgSelected);
 
-    //get the index
+    /* //get the index
     for (var i = 0; i < this.categories.length; i++) {
       if (this.catgSelected === this.categories[i].cat_name) {
         this.selectedCatgIndex = i;
@@ -153,6 +153,10 @@ export class HomeComponent implements OnInit {
         this.showSubCatg = true;
         break;
       }
-    }
+    } */
+
+    //enhanced and removed above code
+    this.selectedCatgIndex = Number.parseInt(this.catgSelected);
+    this.showSubCatg = true;
   }
 }
