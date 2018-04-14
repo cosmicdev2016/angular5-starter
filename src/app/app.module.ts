@@ -22,6 +22,8 @@ import { ChildComponent } from './child/child.component';
 import { ObservableComponent } from './observable/observable.component';
 import { Comp1Component } from './comp1/comp1.component';
 import { Comp2Component } from './comp2/comp2.component';
+import { ReversePipe } from './reverse.pipe';
+import { PipeComponent } from './pipe/pipe.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,7 +35,8 @@ const routes: Routes = [
   { path: 'forms', component: FormsComponent },
   { path: 'services', component: ServiceIntroComponent },
   { path: 'parent', component: ParentComponent },
-  { path: 'observable', component: ObservableComponent }
+  { path: 'observable', component: ObservableComponent },
+  { path: 'pipes', component: PipeComponent }
 ];
 
 @NgModule({
@@ -52,7 +55,9 @@ const routes: Routes = [
     ChildComponent,
     ObservableComponent,
     Comp1Component,
-    Comp2Component
+    Comp2Component,
+    ReversePipe,
+    PipeComponent
 
   ],
   imports: [

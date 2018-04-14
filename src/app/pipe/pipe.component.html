@@ -1,0 +1,47 @@
+<div class="container"><br>
+   
+  <h4>Box:{{box}}</h4>
+
+  <h4>Box as Json:
+    <span class="text-info">{{box | json}}</span>
+  </h4>
+  
+  <h4>Date:
+    <span class="text-info">{{date}}</span>
+  </h4>
+  
+  <h4>Simply:
+    <span class="text-info">{{date | date}}</span>
+  </h4>
+  
+  <h4>Formatted_:
+    <span class="text-info">{{date | date:'yyyy-MM-dd HH:mm a z'}}</span>
+  </h4>
+  
+  <h4>Lower Case:
+    <span class="text-info">{{date | date:'yyyy-MM-dd HH:mm a z':'+0400' | lowercase}}</span>
+  </h4>
+  
+  <h4>Slice:
+    <span class="text-info">{{date | date:'yyyy-MM-dd HH:mm a z' | slice:0:2}}</span>
+  </h4>
+  
+  <h4>Name from Box without referring box object:
+    <span class="text-info">{{'name' | i18nSelect: box}}</span>
+  </h4>
+  
+  <h4>Percentage of 33 ('*100'):
+    <span class="text-info">{{33 | percent}}</span>
+  </h4>
+  
+  <h4>Currency:
+    <span class="text-info">{{box.area | currency}}</span>
+    <input type="text" [(ngModel)]="box.area">    
+
+  </h4>
+  
+  <h4>Angular reversed:
+    <span class="text-info">{{'Angular' | reverse:'!!!':'...'}}</span>
+  </h4>
+
+</div>
