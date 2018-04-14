@@ -23,10 +23,10 @@
         <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
       </li>
       <li class="nav-item" *ngIf="!postService.loginSuccess">
-        <a class="nav-link" routerLink="/parent" routerLinkActive="active">Parent-Child</a>
-      </li>
-      <li class="nav-item" *ngIf="!postService.loginSuccess">
         <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+      </li>
+      <li class="nav-item" *ngIf="postService.loginSuccess">
+        <a class="nav-link" routerLink="/parent" routerLinkActive="active">Parent-Child</a>
       </li>
       <li class="nav-item" *ngIf="postService.loginSuccess">
         <a class="nav-link" routerLink="/todos" routerLinkActive="active">TODOs</a>
@@ -35,16 +35,16 @@
         <a class="nav-link" routerLink="/services" routerLinkActive="active" *ngIf="postService.loginSuccess">Services</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" routerLink="/observable" routerLinkActive="active" *ngIf="postService.loginSuccess">Observable</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/pipes" routerLinkActive="active" *ngIf="postService.loginSuccess">Pipe</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/directive" routerLinkActive="active" *ngIf="postService.loginSuccess">Directive</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" routerLink="/logout" routerLinkActive="active" (click)="logout()" *ngIf="postService.loginSuccess">Logout</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/observable" routerLinkActive="active">Observable</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/pipes" routerLinkActive="active">Pipe</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/directive" routerLinkActive="active">Directive</a>
       </li>
     </ul>
   </div>
