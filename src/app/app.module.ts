@@ -1,3 +1,4 @@
+import { ForObserableService } from './for-obserable.service';
 import { PostsService } from './posts.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -18,6 +19,9 @@ import { FormsComponent } from './forms/forms.component';
 import { ServiceIntroComponent } from './service-intro/service-intro.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { ObservableComponent } from './observable/observable.component';
+import { Comp1Component } from './comp1/comp1.component';
+import { Comp2Component } from './comp2/comp2.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,7 +32,8 @@ const routes: Routes = [
   { path: 'todos', component: TodosComponent },
   { path: 'forms', component: FormsComponent },
   { path: 'services', component: ServiceIntroComponent },
-  { path: 'parent', component: ParentComponent }
+  { path: 'parent', component: ParentComponent },
+  { path: 'observable', component: ObservableComponent }
 ];
 
 @NgModule({
@@ -44,7 +49,10 @@ const routes: Routes = [
     FormsComponent,
     ServiceIntroComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    ObservableComponent,
+    Comp1Component,
+    Comp2Component
 
   ],
   imports: [
@@ -53,7 +61,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpModule
   ],
-  providers: [PostsService],
+  providers: [PostsService, ForObserableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
