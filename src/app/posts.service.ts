@@ -30,4 +30,22 @@ export class PostsService {
     this.loginSuccess = false;
   }
 
+  /**
+   * Rest services
+   */
+  listUsers() {
+    return this.http.get('http://localhost:8081/listUsers')
+      .map(res => res.json());
+  }
+
+  addUser(user) {
+    return this.http.post('http://localhost:8081/adduser', user)
+      .map(res => res.json());
+  }
+
+  deleteUser(rowIndex) {
+    return this.http.delete('http://localhost:8081/deleteUser/' + rowIndex)
+      .map(res => res.json());
+  }
+
 }

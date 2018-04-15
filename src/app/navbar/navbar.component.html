@@ -44,6 +44,9 @@
         <a class="nav-link" routerLink="/directive" routerLinkActive="active" *ngIf="postService.loginSuccess">Directive</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" routerLink="/restful" routerLinkActive="active" *ngIf="postService.loginSuccess">Restful</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" routerLink="/logout" routerLinkActive="active" (click)="logout()" *ngIf="postService.loginSuccess">Logout</a>
       </li>
     </ul>

@@ -26,6 +26,7 @@ import { ReversePipe } from './reverse.pipe';
 import { PipeComponent } from './pipe/pipe.component';
 import { ColorDirective } from './color.directive';
 import { ColorDirectiveComponent } from './color-directive/color-directive.component';
+import { RestfulComponent } from './restful/restful.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -39,7 +40,8 @@ const routes: Routes = [
   { path: 'parent', component: ParentComponent },
   { path: 'observable', component: ObservableComponent },
   { path: 'pipes', component: PipeComponent },
-  { path: 'directive', component: ColorDirectiveComponent }
+  { path: 'directive', component: ColorDirectiveComponent },
+  { path: 'restful', component: RestfulComponent }
 ];
 
 @NgModule({
@@ -62,7 +64,8 @@ const routes: Routes = [
     ReversePipe,
     PipeComponent,
     ColorDirective,
-    ColorDirectiveComponent
+    ColorDirectiveComponent,
+    RestfulComponent
 
   ],
   imports: [

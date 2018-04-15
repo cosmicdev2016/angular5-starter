@@ -1,0 +1,21 @@
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let user of users; let i = index">
+      id: {{user.id}}, name: {{user.name}}
+      <span class="badge badge-warning badge-pill">
+        <a href="#" data-dismiss="alert" (click)="deleteUser(i)" aria-label="close">X</a>
+      </span>
+    </li>
+  </ul>
+  <form class="form-inline row mt-3">
+    <div class="form-group">
+      <label class="col-md" for="id">Id:</label>
+      <input type="text" class="form-control col-md" name="id" id="id" [(ngModel)]="user.id">
+    </div>
+    <div class="form-group">
+      <label class="col-md" for="name">Name:</label>
+      <input type="text" class="form-control col-md" name="name" id="name" [(ngModel)]="user.name">
+    </div>
+    <button type="button" class="col-md-2 btn btn-primary" (click)="addUser()">Submit</button>
+  </form>
+</div>

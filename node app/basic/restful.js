@@ -29,13 +29,14 @@ app.put('/edituser', function (req, res) {
 });
 
 app.post('/adduser', function (req, res) {
-  console.log(req.body);
   users.push(req.body);
+  console.log("user added successfully: " + JSON.stringify(req.body));
   res.end(JSON.stringify(users));
 });
 
 app.delete('/deleteUser/:id', function (req, res) {
   users.splice(req.params.id, 1);
+  console.log("user deleted successfully: " + req.params.id);
   res.end(JSON.stringify(users));
 })
 
