@@ -1,0 +1,73 @@
+{
+	"variables": [],
+	"info": {
+		"name": "restful",
+		"_postman_id": "9487e6c3-068e-b63c-55c2-253915fa48ea",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "list-user",
+			"request": {
+				"url": "localhost:8081/listUsers",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add-user",
+			"request": {
+				"url": "localhost:8081/adduser",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\": 4, \"name\": \"jacob\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "edit-user",
+			"request": {
+				"url": "localhost:8081/edituser",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"id\": 4, \"name\": \"jacob_Update\" }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete-user",
+			"request": {
+				"url": "localhost:8081/deleteUser/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
